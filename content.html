@@ -25,8 +25,8 @@
             margin: 0;
             font-family: Rubik;
             user-select: none;
-            color: white;
-            background-color: #3f87f2;
+            color: black;
+            background-color: white;
             transition: all 0.4s ease-in;
         }
 
@@ -42,9 +42,10 @@
         }
 
         .back-img {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             padding-left: 20px;
+            filter: invert(1);
         }
         .back-img:active {
             opacity: .7;
@@ -87,7 +88,7 @@
             overflow: auto;
             max-width: 600px;
             padding: 10px;
-            background-color: black;
+            background-color: #f3f3f3;
             border-radius: 10px;
             transition: all .4s ease;
         }
@@ -131,11 +132,11 @@
             max-width: 600px;
             height: fit-content;
             padding: 15px 0;
-            background-color: white;
+            background: linear-gradient(45deg, #fbae77, #e37832);
             border-radius: 10px;
             box-shadow: 1px 1px 4px rgba(0 0 0, .5);
             text-align: center;
-            color: #3f87f2;
+            color: white;
             font-size: larger;
         }
         .com-next {
@@ -268,7 +269,7 @@
             top: 0; left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: #3f87f2;
+            background-color: #fff;
             display: none;
             justify-content: center;
             align-items: center;
@@ -323,13 +324,13 @@
             if (darkMode == 'T')
                 $(".code-bg").css({ backgroundColor: 'black' });
             else
-                $(".code-bg").css({ backgroundColor: 'white' });
+                $(".code-bg").css({ backgroundColor: '#f3f3f3' });
         }
         ChangeColor();
         $(".dark-mode").click(function () {
             if (darkMode == 'T') { //darkMode is True
                 darkMode = 'F';
-                $(".code-bg").css({ backgroundColor: 'white' });
+                $(".code-bg").css({ backgroundColor: '#f3f3f3' });
             } else {//darkMode is False
                 darkMode = 'T';
                 $(".code-bg").css({ backgroundColor: 'black' });
@@ -399,7 +400,7 @@
                 }
             });
 
-            $("#ans, .noans").css({ backgroundColor: 'white', color: 'black' });
+            $("#ans, .noans").css({ background: 'linear-gradient(45deg, #fbae77, #e37832)', color: 'white' });
         }
         Append();
 
@@ -421,7 +422,7 @@
             CheckInter();
             document.getElementById('correct-aud').play();
             console.log("Correct!")
-            $("#ans").css({ backgroundColor: 'green', color: 'white' });
+            $("#ans").css({ background: 'green'});
             setTimeout(() => {
                 $(".win-ct-bg").css({ transform: 'translateY(0)' });
                 $(".win-bg").css({ display: 'flex' });
@@ -466,7 +467,7 @@
             inter++;
             CheckInter();
             document.getElementById('wrong-aud').play();
-            $(this).css({ backgroundColor: 'red', color: 'white' });
+            $(this).css({ background: 'red'});
         });
 
         $(".com-next").click(function () {
